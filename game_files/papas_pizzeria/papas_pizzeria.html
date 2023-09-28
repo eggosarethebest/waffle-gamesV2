@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Papas pizzeria</title>
-    <link rel="stylesheet" href="./papas_pizzeria.css">
-    <link rel="icon" href="./favicon.ico" type="/img/Logo-Pizzeria.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Papa's Pizzaria</title>
+    <link rel="icon" type="image/x-icon" href="papaspizzaria.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="papaspizzaria.jpg" />
   </head>
   <body>
-    <div>
-      <script src="https://xxsibxx.github.io/ruffleembedsetup112/ruffle/ruffle.js"></script>
-      <div class="swf"dir="ltr" style="text-align: left;" trbidi="on">
-              <embed height="480" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="papaspizzeria_v2.swf" type="application/x-shockwave-flash" width="cover"></embed>
-            </div>
+    <script src="/js/main.js"></script>
+    <div id="ruffle" width="100%" height="100%"></div>
+    <script src="ruffle.js"></script>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("ruffle");
+        player.id = "player";
+        player.style.width = "100%";
+        player.style.height = "100%";
+        container.appendChild(player);
+        player.load("papaspizzaria.swf");
+      });
+    </script>
   </body>
 </html>
