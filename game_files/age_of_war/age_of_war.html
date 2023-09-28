@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Age Of War</title>
-    <link rel="stylesheet" href="./age-of-war.ss">
-    <script src="../ruffle/ruffle.js"></script>
   </head>
-  <body>
-
-     <script>
+  <body style="margin: 0; padding: 0">
+    <div
+      id="container"
+      style="position: absolute; width: auto; height: auto; inset: 0"
+    ></div>
+    <script src="../ruffle/ruffle.js"></script>
+    <script>
       window.RufflePlayer = window.RufflePlayer || {};
       window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
