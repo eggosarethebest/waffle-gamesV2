@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Age Of War</title>
-    <link rel="stylesheet" href="./age-of-war.css">
+    <link rel="stylesheet" href="./age-of-war.ss">
   </head>
   <body>
-    <div>
-      <script src="https://xxsibxx.github.io/ruffleembedsetup112/ruffle/ruffle.js"></script>
-      <div class="swf"dir="ltr" style="text-align: left;" trbidi="on">
-              <embed height="480" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="age-of-war.swf" type="application/x-shockwave-flash" width="cover"></embed>
-            </div>
+     <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+        player.style.width = "100%";
+        player.style.height = "100%";
+        container.appendChild(player);
+        player.load("age-of-war.swf");
+      });
+    </script>
   </body>
 </html>
