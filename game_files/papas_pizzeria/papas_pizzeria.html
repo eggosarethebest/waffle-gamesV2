@@ -1,21 +1,28 @@
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Papa's Pizzaria</title>
+    <head>
+        <meta charset='utf8'>
+        <title>Papa's Pizzaria</title>
  <link rel="stylesheet" href="papas_pizzeria.css" />
-  </head>
-  <body>
-    <script>
-    window.RufflePlayer = window.RufflePlayer || {};
+    </head>
+    <body>
+        <div id='ruffle'></div>
+        <script src='https://e9x.github.io/ruffle-example/ruffle.js'></script>
+        <script>
+var swfobject = {};
 
-    window.addEventListener("DOMContentLoaded", () => {
-        let ruffle = window.RufflePlayer.newest();
-        let player = ruffle.createPlayer();
-        let container = document.getElementById("container");
-        container.appendChild(player);
-        player.load("papaspizzeria_v2.swf");
-    });
-</script>
-<script src="game_files/ruffle/ruffle.js"></script>
-  </body>
+swfobject.embedSWF = function(url, cont, width, height){
+    var ruffle = window.RufflePlayer.newest(),
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            width: width,
+            height: height,
+            style: 'width: ' + width + 'px; height: ' + height + 'px',
+        });
+    
+    player.load({ url: url });
+}
+
+swfobject.embedSWF('papaspizzeria_v2.swf', 'ruffle', 500, 500);
+        </script>
+    </body>
 </html>
